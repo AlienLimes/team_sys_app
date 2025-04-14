@@ -2,7 +2,7 @@
   #name;
   #playerNumber;
   #ratings = [];
-  #currentSquadMember;
+  #currentSquadMember = false;
   
   
   constructor(name, currentSquadMember, playerNumber) {
@@ -48,16 +48,7 @@
     return this.#ratings;
     
   }
-  //set ratings(ratings) {
-  //  if(!isNaN(ratings)){
-  //    this.#ratings = (Math.round(uc * 100) / 100).toFixed(6);
-  //    
-  //  }
-  //          else {
-  //           this.#ratings = .00.toFixed(6);
-  //      }
-  //  
-  //}
+
   set ratings(ratings) {
     this.#ratings = ratings;
     
@@ -71,14 +62,14 @@
     return this.#currentSquadMember;
   }
 
-  set currentSquadMember(csm) {
-    this.#currentSquadMember = csm;
+  set currentSquadMember(currentSquadMember) {
+    this.#currentSquadMember = currentSquadMember;
   }
 
   toString() {
-     var txt = this.name + " " + 
-         this.playerNumber + " " + 
-         this.ratings + " " +
+     var txt = "Player details: " + "Name: " + this.name + " " + 
+         "Player number: " + this.playerNumber + " " + 
+         "Ratings: " + this.ratings + " " +
          this.currentSquadMember;
     return txt;
   }

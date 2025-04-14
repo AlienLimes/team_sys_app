@@ -37,22 +37,24 @@ function addPlayer() {
     if (document.getElementById("yes").checked) {
         squadMember = true;
     }
+    console.log(squadMember)
     
     player = new Player(name, number, rating, squadMember);
     team.addPlayer(player);
+    console.log(player.toString());
  
     
     /////////////////////////////// TODO REMOVE!!!!!!!!!
-    //team.addPlayer(new player('laci', 22, 5, true));
-    //team.addPlayer(new player('peti', 1, 2, false));
+    team.addPlayer(new Player('laci', 22, 5, true));
+    team.addPlayer(new Player('peti', 1, 2, false));
     
     ////////////////////////////////////TODO REMOVE ABOVE
     
-    document.getElementById("name").value = '';
-    document.getElementById("number").value = '';
-    document.getElementById("rating").value = '';
-    document.getElementById("yes").checked = false;
-    document.getElementById("no").checked = false;
+    //document.getElementById("name").value = '';
+    //document.getElementById("number").value = '';
+    //document.getElementById("rating").value = '';
+    //document.getElementById("yes").checked = true;
+    //document.getElementById("no").checked = false;
     
     hideMenus();
     showMainMenu();

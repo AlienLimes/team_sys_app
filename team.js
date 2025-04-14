@@ -37,7 +37,8 @@ class Team {
     }
     
     
-    addPlayer(player) {   
+    addPlayer(player) { 
+        
         this.#players.push(player);
     }
     //addPlayer(player) {
@@ -59,9 +60,12 @@ class Team {
     listPlayers() {
         var returnString ='';
         for (var i = 0; i < this.players.length; i++) {
-            returnString = returnString + this.players[i] + '</br>';
+            // `${i}` reference to the value of i what is the index of each element
+            returnString = returnString + `${i}: ` + this.players[i].toString() + '</br>';
+           
         }
         return returnString;
+         //console.log(returnString);
     }
     
     deRegisterPlayer(indexToDeRegister) {
@@ -72,4 +76,7 @@ class Team {
     isEmpty() {
         return this.players.length == 0;
     }
+
+
+
 }
