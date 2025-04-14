@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="player.js"></script>
+        <script src="team.js"></script>
+        <script src="sketch.js"></script>
+    </head>
+    <body>
+        <h1 class="title">Team System</h1>
+    <div id='promptMenu'>
+            <label for='maxPlayers'>How many players are on the team?</label>
+            <input type='text' id='maxPlayers' name='maxPlayers'/>
+            <p/>
+            <input type='submit' value='Submit' onclick='createTeam()'/>
+        </div>
+                <div id="mainMenu" class="hidden">
+        <H2>********** Main Menu **********</H2>
+        <p/>
+        <input type="radio" id="addPlayer" name="mainChoices" value="addPlayer" />
+        <label for="addPlayer">Add a Player</label><br />
+                    
+       
+
+                    
+        <input type="radio" id="listPlayers" name="mainChoices" value="listPlayers" />
+        <label for="listPlayers">List All Players</label><br />
+        
+        <input type="radio" id="listCurrentPlayers" name="mainChoices" value="listCurrentPlayers" />
+        <label for="listCurrentPlayers">List the players currently on this season's squad</label><br />
+        <!--
+
+        
+        <input type="radio" id="avgUnitCost" name="mainChoices" value="avgUnitCost" />
+        <label for="avgUnitCost">Display Average Product Unit Cost</label><br />
+        
+        <input type="radio" id="cheapestProduct" name="mainChoices" value="cheapestProduct" />
+        <label for="cheapestProduct">Display Cheapest Product</label><br />
+        
+        <input type="radio" id="lowestGrade" name="mainChoices" value="lowestGrade" />
+        <label for="lowestGrade">List products that are more expensive then a given price.</label><br />
+        
+        -->
+        <p/>
+        <input type="submit" value="Select Option" onclick="mainMenuSelection()">
+                    
+      </div>
+        <div id="addPlayerMenu" class = "hidden">
+            <label for="name">Player Name: </label>
+            <input type="text" id="name" name="name" />
+            <p />
+            <label for="number">Player Number: </label>
+            <input type="number" id="number" name="number" placeholder="23" />
+            <p />
+            <label for="rating">Player Rating: </label>
+            <input type="text" id="rating" name="rating" />
+            <p />
+            Is this player part of the Squad?<br/>
+            <input type="radio" id="yes" name="squadMember" value="yes" />
+            <label for="yes">Yes</label><br />
+            <input type="radio" id="no" name="squadMember" value="no" />
+            <label for="no">No</label><br />
+            <p />
+            <input type="submit" value="Add Player" onclick="addPlayer()" />
+            <p />
+        </div>
+        <div id='showInfo'></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </body>
+</html>
