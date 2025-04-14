@@ -50,6 +50,7 @@
   }
 
   set ratings(ratings) {
+    
     this.#ratings = ratings;
     
   }
@@ -63,7 +64,13 @@
   }
 
   set currentSquadMember(currentSquadMember) {
-    this.#currentSquadMember = currentSquadMember;
+    if (currentSquadMember == true){
+      this.#currentSquadMember = "and is a current squad member";
+    }
+    else {
+      this.#currentSquadMember = "and is currently not a squad member";
+    }
+    
   }
 
   toString() {
