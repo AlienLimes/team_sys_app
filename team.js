@@ -1,5 +1,5 @@
 class Team {
-    #players = [];
+    #players;
     #total;
     
     constructor(total, players) {
@@ -11,20 +11,45 @@ class Team {
         return this.#players;
     }
     
-    getPlayerByNumber(playerNumber) {
-    return this.players.find(player => player.playerNumber == playerNumber);
-}
-    
-
-
-
     set players(players) {
        
             console.log(players);
         
     }
     
+    //rating relies on //
+    getPlayerByNumber(playerNumber) {
+    return this.players.find(player => player.playerNumber == playerNumber);
+}
+    
 
+    
+    addPlayer(player) {
+        if (this.#players.length < this.#total) {
+            this.#players.push(player);
+        } else {
+            console.warn("Cannot add more players: team is full.");
+        }
+    }
+    //
+    //addPlayer(player) {
+    //            if(!this.isFull()){
+    //        this.#players.push(player);
+    //    }
+    //}
+    //
+
+    
+        //addPlayer(player) { 
+    //    
+    //    this.#players.push(player);
+    //}
+    //addPlayer(player) {
+    //    if(!this.deRegisterPlayer(indexToDeRegister)){
+    //        
+    //    this.#players.push(player);
+    //    }
+    //}
     
     get total() {
         return this.#total;
@@ -36,31 +61,16 @@ class Team {
               console.log(total);
         }
         else {
-            this.#total > 40;
+            this.#total = 40;
             console.log("Error");
         }
     }
     
     
-    //addPlayer(player) { 
-    //    
-    //    this.#players.push(player);
-    //}
-    //addPlayer(player) {
-    //    if(!this.deRegisterPlayer(indexToDeRegister)){
-    //        
-    //    this.#players.push(player);
-    //    }
-    //}
+
   
     
-    addPlayer(player) {
-        if (this.#players.length < this.#total) {
-            this.#players.push(player);
-        } else {
-            console.warn("Cannot add more players: team is full.");
-        }
-    }
+
     
       listPlayersNum() {
     let num = '';
@@ -91,6 +101,13 @@ class Team {
         return this.players.length == 0;
     }
 
-
+listCurrentPlayers() {
+  return this.players
+    .filter(player => player.currentSquadMember === "Current Squad Member :YES")
+    .map(player => player.toString())
+    .join("<br/>");
+}
+    
+    
 
 }

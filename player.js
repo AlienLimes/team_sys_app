@@ -2,7 +2,7 @@
   #name;
   #playerNumber;
   #ratings = [];
-  #currentSquadMember = false;
+  #currentSquadMember;
   
   
   constructor(name, currentSquadMember, playerNumber) {
@@ -11,11 +11,11 @@
     this.playerNumber = playerNumber;
     
   }
-
+///////NAME////
   get name() {
     return this.#name;
   }
-
+//name max length 20, truncate if longer//
   set name(name) {
      if (name.length <= 20) {
             this.#name = name;
@@ -24,20 +24,22 @@
         }
   }
 
+ ///////////////////////////   
     
     
     
-    
+  ///////////NUMBER///////////////
     
   get playerNumber() {
     return this.#playerNumber;
   }
-
+//player number 1-23, 23 defult
   set playerNumber(number) {
-    if (number > 0 && number <= 23){
+    if (number >= 1 && number <= 23){
       this.#playerNumber = number;
     } else {
-      console.log("Please pick a number between 1-23");
+      this.#playerNumber = 23;
+      alert("Please pick a number between 1-23");
     }
     
   }
@@ -80,14 +82,18 @@
   }
 
   set currentSquadMember(currentSquadMember) {
-    if (currentSquadMember == true){
-      this.#currentSquadMember = "and is a current squad member";
+    if (currentSquadMember === true){
+      this.#currentSquadMember = "Current Squad Member :YES";
     }
     else {
-      this.#currentSquadMember = "and is currently not a squad member";
+      this.#currentSquadMember = "Current Squad Member :NO";
     }
     
   }
+
+    
+
+    
 
   toString() {
      var txt = "Player details: " + "Name: " + this.name + " " + 
@@ -96,21 +102,7 @@
          this.currentSquadMember;
     return txt;
   }
-        //toString() {
-        //return (
-        //    " Name: " +
-        //    this.name +
-        //    ", " +
-        //    "player number: " +
-        //    this.playerNumber +
-        //    ", " +
-        //    "ratings: " +
-        //    this.ratings +
-        //    ", " +
-        //    "currently in the Squad: " +
-        //    this.currentSquadMember()
-        //);
-    //}
+
 }
 
 

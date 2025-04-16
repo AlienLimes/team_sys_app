@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -10,30 +10,31 @@
     </head>
     <body>
         <h1 class="title">Team System</h1>
-    <div id='promptMenu'>
-            <label for='maxPlayers'>How many players are on the team?</label>
-            <input type='text' id='maxPlayers' name='maxPlayers'/>
-            <p/>
-            <input type='submit' value='Submit' onclick='createTeam()'/>
+        <div id="promptMenu">
+            <label for="maxPlayers">How many players are on the team?</label>
+            <input type="text" id="maxPlayers" name="maxPlayers" />
+            <p />
+
+            <input type="submit" value="Submit" onclick="createTeam()" />
         </div>
-                <div id="mainMenu" class="hidden">
-        <H2>********** Main Menu **********</H2>
-        <p/>
-        <input type="radio" id="addPlayer" name="mainChoices" value="addPlayer" />
-        <label for="addPlayer">Add a Player</label><br />
-                    
-        <input type="radio" id="addRating" name="mainChoices" value="addRating" />
-        <label for="addRating">Add player ratings</label><br />
-                    
+        <div id="mainMenu" class="hidden">
+            <h2>********** Main Menu **********</h2>
+            <p />
+            <input type="radio" id="addPlayer" name="mainChoices" value="addPlayer" />
+            <label for="addPlayer">Add a Player</label><br />
 
+            <input type="radio" id="addRating" name="mainChoices" value="addRating" />
+            <label for="addRating">Add player ratings</label><br />
 
-                    
-        <input type="radio" id="listPlayers" name="mainChoices" value="listPlayers" />
-        <label for="listPlayers">List All Players</label><br />
-        
-        <input type="radio" id="listCurrentPlayers" name="mainChoices" value="listCurrentPlayers" />
-        <label for="listCurrentPlayers">List the players currently on this season's squad</label><br />
-        <!--
+            <input type="radio" id="addSquad" name="mainChoices" value="addSquad" />
+            <label for="addRating">Add player to the squad</label><br />
+
+            <input type="radio" id="listPlayers" name="mainChoices" value="listPlayers" />
+            <label for="listPlayers">List All Players</label><br />
+
+            <input type="radio" id="listCurrentPlayers" name="mainChoices" value="listCurrentPlayers" />
+            <label for="listCurrentPlayers">List the players currently on this season's squad</label><br />
+            <!--
 
         
         <input type="radio" id="avgUnitCost" name="mainChoices" value="avgUnitCost" />
@@ -46,12 +47,10 @@
         <label for="lowestGrade">List products that are more expensive then a given price.</label><br />
         
         -->
-        <p/>
-        <input type="submit" value="Select Option" onclick="mainMenuSelection()">
-                  
-                    
-      </div>
-        <div id="addPlayerMenu" class = "hidden">
+            <p />
+            <input type="submit" value="Select Option" onclick="mainMenuSelection()" />
+        </div>
+        <div id="addPlayerMenu" class="hidden">
             <label for="name">Player Name: </label>
             <input type="text" id="name" name="name" />
             <p />
@@ -60,7 +59,7 @@
             <p />
 
             <p />
-            Is this player part of the Squad?<br/>
+            Is this player part of the Squad?<br />
             <input type="radio" id="yes" name="squadMember" value="yes" />
             <label for="yes">Yes</label><br />
             <input type="radio" id="no" name="squadMember" value="no" />
@@ -69,58 +68,52 @@
             <input type="submit" value="Add Player" onclick="addPlayer()" />
             <p />
         </div>
-   
-        
-        <div id="addRatingsMenu" class = "hidden">
-            
-            <label for='maxPlayers'>Which player number you wish to add rating to?</label>
-            <input type='text' id='playerNumber' name='playerNumber'/>
-            <p/>
-            <input type='submit' value='Submit' onclick='addRating()'/>
-            
-            <div>
-        <label for="rating">Player Rating: </label>
+
+        <div id="addRatingsMenu" class="hidden">
+            <label for="maxPlayers">Which player number you wish to add rating to?</label>
+            <input type="text" id="playerNumber" name="playerNumber" />
+            <p />
+
+            <label for="rating">Player Rating 1: </label>
             <input type="text" id="rating" name="rating" />
-            <p/>
-        </div>
-            
-            
-        </div>
-        
 
-       
+            <p />
+            <p />
 
-        
+            <label for="rating2">Player Rating 2: </label>
+            <input type="text" id="rating2" name="rating" />
+
+            <p />
+            <p />
+
+            <label for="rating3">Player Rating 3: </label>
+            <input type="text" id="rating3" name="rating" />
+
+            <p />
+            <p />
+
+            <label for="rating4">Player Rating 4: </label>
+            <input type="text" id="rating4" name="rating" />
+
+            <p />
+            <p />
+
+            <label for="rating5">Player Rating 5: </label>
+            <input type="text" id="rating5" name="rating" />
+
+            <p />
+            <p />
+
+            <label for="rating6">Player Rating 6: </label>
+            <input type="text" id="rating6" name="rating" />
+
+            <p />
+            <input type="submit" value="Submit" onclick="addRating()" />
+            <p></p>
+            <!--<input type='submit' value='back' onclick="mainMenuSelection()"/> -->
+        </div>
+
         <!--<div id='showInfo'></div>-->
         <div id="showInfo" class="hidden"></div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     </body>
 </html>
