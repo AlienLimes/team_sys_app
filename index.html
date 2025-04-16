@@ -22,7 +22,10 @@
         <input type="radio" id="addPlayer" name="mainChoices" value="addPlayer" />
         <label for="addPlayer">Add a Player</label><br />
                     
-       
+        <input type="radio" id="addRating" name="mainChoices" value="addRating" />
+        <label for="addRating">Add player ratings</label><br />
+                    
+
 
                     
         <input type="radio" id="listPlayers" name="mainChoices" value="listPlayers" />
@@ -45,6 +48,7 @@
         -->
         <p/>
         <input type="submit" value="Select Option" onclick="mainMenuSelection()">
+                  
                     
       </div>
         <div id="addPlayerMenu" class = "hidden">
@@ -54,8 +58,7 @@
             <label for="number">Player Number: </label>
             <input type="number" id="number" name="number" placeholder="23" />
             <p />
-            <label for="rating">Player Rating: </label>
-            <input type="text" id="rating" name="rating" />
+
             <p />
             Is this player part of the Squad?<br/>
             <input type="radio" id="yes" name="squadMember" value="yes" />
@@ -66,7 +69,30 @@
             <input type="submit" value="Add Player" onclick="addPlayer()" />
             <p />
         </div>
-        <div id='showInfo'></div>
+   
+        
+        <div id="addRatingsMenu" class = "hidden">
+            
+            <label for='maxPlayers'>Which player number you wish to add rating to?</label>
+            <input type='text' id='playerNumber' name='playerNumber'/>
+            <p/>
+            <input type='submit' value='Submit' onclick='addRating()'/>
+            
+            <div>
+        <label for="rating">Player Rating: </label>
+            <input type="text" id="rating" name="rating" />
+            <p/>
+        </div>
+            
+            
+        </div>
+        
+
+       
+
+        
+        <!--<div id='showInfo'></div>-->
+        <div id="showInfo" class="hidden"></div>
     
     
     

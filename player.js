@@ -29,8 +29,6 @@
     
     
     
-    
-    
   get playerNumber() {
     return this.#playerNumber;
   }
@@ -43,20 +41,38 @@
     }
     
   }
-
-  get ratings() {
-    return this.#ratings;
     
+    
+    
+    get ratings() {
+    return this.#ratings;
   }
 
   set ratings(ratings) {
-    
-    this.#ratings = ratings;
-    
-  }
-    addRating(index,rating) {
-      
+    if (
+      Array.isArray(ratings) &&
+      ratings.length === 6 &&
+      ratings.every((i) => typeof i === 'number' && i >= 0 && i <= 5)
+      // check array length , every index /typeof operator returns the type of a variable and if it equals to a number between 0-5 /
+    ) {
+      this.#ratings = ratings;
+    } else {
+      console.log("Ratings must be between 0 and 5 ");
+      this.#ratings = [];
     }
+  }
+
+  addRating(rating) {
+    //check if ratin is a number and check if rating between 0-5
+  if (typeof rating === 'number' && rating >= 0 && rating <= 5) {
+    
+    this.#ratings.push(rating);
+  } else {
+    console.log("Rating must be a number between 0 and 5.");
+  }
+ }
+    
+
   
 
   get currentSquadMember() {
@@ -96,3 +112,13 @@
         //);
     //}
 }
+
+
+
+
+
+
+
+
+
+

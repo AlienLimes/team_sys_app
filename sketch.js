@@ -1,4 +1,4 @@
-let team ;
+let team;
 
 function createTeam() {
     
@@ -8,12 +8,34 @@ function createTeam() {
     if (total <= 40){
             hideMenus();
             showMainMenu();
-    } else {
-        
-        console.log("numbers woron");
+    } else {       
+        console.log("numbers are wrong");
     }
 
 }
+
+function addRating() {
+    const rating = parseFloat(document.getElementById("rating").value);
+    const playerNumber = parseInt(document.getElementById("playerNumber").value);
+    
+    
+    
+    const player = team.getPlayerByNumber(playerNumber);
+
+    if (!player) {
+        document.getElementById('showInfo').innerHTML = "Player not found.";
+        return;
+    }
+
+    if (isNaN(rating) || rating < 0 || rating > 5) {
+        document.getElementById('showInfo').innerHTML = "Rating must be a number between 0 and 5.";
+        return;
+    }
+
+    player.addRating(rating);
+    document.getElementById('showInfo').innerHTML = `Rating added to ${player.name}. Current ratings: [${player.ratings.join(', ')}]`;
+}
+
 
 function mainMenuSelection() {
     if (document.getElementById('addPlayer').checked) {
@@ -25,6 +47,13 @@ function mainMenuSelection() {
         document.getElementById('showInfo').innerHTML= team.listPlayers();
         document.getElementById('showInfo').classList.remove('hidden');
     }
+    else if (document.getElementById("addRating").checked) {
+    hideMenus();
+    document.getElementById('addRatingsMenu').classList.remove('hidden');
+    document.getElementById('showInfo').classList.remove('hidden');
+    document.getElementById('showInfo').innerHTML = team.listPlayersNum();
+}
+
 }
 
 function addPlayer() {
@@ -37,7 +66,7 @@ function addPlayer() {
     if (document.getElementById("yes").checked) {
         squadMember = true;
     }
-    console.log(squadMember)
+    console.log(squadMember);
     
     player = new Player(name, number, rating, squadMember);
     team.addPlayer(player);
@@ -47,7 +76,8 @@ function addPlayer() {
     /////////////////////////////// TODO REMOVE!!!!!!!!!
     team.addPlayer(new Player('laci', 22, 5, true));
     team.addPlayer(new Player('peti', 1, 2, false));
-    
+    //const player1=new Player("terike",1,2,true);
+    //player1.addRating(4)
     ////////////////////////////////////TODO REMOVE ABOVE
     
     //document.getElementById("name").value = '';

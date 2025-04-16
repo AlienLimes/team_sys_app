@@ -10,6 +10,11 @@ class Team {
     get players () {
         return this.#players;
     }
+    
+    getPlayerByNumber(playerNumber) {
+    return this.players.find(player => player.playerNumber == playerNumber);
+}
+    
 
 
 
@@ -37,10 +42,10 @@ class Team {
     }
     
     
-    addPlayer(player) { 
-        
-        this.#players.push(player);
-    }
+    //addPlayer(player) { 
+    //    
+    //    this.#players.push(player);
+    //}
     //addPlayer(player) {
     //    if(!this.deRegisterPlayer(indexToDeRegister)){
     //        
@@ -49,13 +54,22 @@ class Team {
     //}
   
     
-    //addPlayer(player) {
-    //    if (this.#players.length < this.#total) {
-    //        this.#players.push(player);
-    //    } else {
-    //        console.warn("Cannot add more players: team is full.");
-    //    }
-    //}
+    addPlayer(player) {
+        if (this.#players.length < this.#total) {
+            this.#players.push(player);
+        } else {
+            console.warn("Cannot add more players: team is full.");
+        }
+    }
+    
+      listPlayersNum() {
+    let num = '';
+    for (let i = 0; i < this.players.length; i++) {
+        num += `Name: ${this.players[i].name}, Number: ${this.players[i].playerNumber}<br/>`;
+    }
+    return num;
+}
+
     
     listPlayers() {
         var returnString ='';
